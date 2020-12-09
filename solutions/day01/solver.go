@@ -6,16 +6,14 @@ import (
 	"github.com/drtchops/aoc2020/utils"
 )
 
-type Solver struct {
-	input string
+type Solver struct{}
+
+func New() *Solver {
+	return &Solver{}
 }
 
-func New(input string) *Solver {
-	return &Solver{input: input}
-}
-
-func (s *Solver) SolveA() string {
-	entries := utils.ParseInputInts(s.input, "\n")
+func (s *Solver) SolveA(input string) string {
+	entries := utils.ParseInputInts(input, "\n")
 
 	for i, entry1 := range entries {
 		for j := i + 1; j < len(entries); j++ {
@@ -29,8 +27,8 @@ func (s *Solver) SolveA() string {
 	return ""
 }
 
-func (s *Solver) SolveB() string {
-	entries := utils.ParseInputInts(s.input, "\n")
+func (s *Solver) SolveB(input string) string {
+	entries := utils.ParseInputInts(input, "\n")
 
 	for i, entry1 := range entries {
 		for j, entry2 := range entries {

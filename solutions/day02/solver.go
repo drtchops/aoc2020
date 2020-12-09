@@ -6,16 +6,14 @@ import (
 	"strings"
 )
 
-type Solver struct {
-	input string
+type Solver struct{}
+
+func New() *Solver {
+	return &Solver{}
 }
 
-func New(input string) *Solver {
-	return &Solver{input: input}
-}
-
-func (s *Solver) SolveA() string {
-	entries := strings.Split(s.input, "\n")
+func (s *Solver) SolveA(input string) string {
+	entries := strings.Split(input, "\n")
 	numValid := 0
 
 	for _, line := range entries {
@@ -44,8 +42,8 @@ func (s *Solver) SolveA() string {
 	return fmt.Sprint(numValid)
 }
 
-func (s *Solver) SolveB() string {
-	entries := strings.Split(s.input, "\n")
+func (s *Solver) SolveB(input string) string {
+	entries := strings.Split(input, "\n")
 	numValid := 0
 
 	for _, line := range entries {
